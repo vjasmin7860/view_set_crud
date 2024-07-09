@@ -22,6 +22,7 @@ from rest_framework.routers import DefaultRouter
 DRO=DefaultRouter()
 
 DRO.register('ProductCrud',ProductCrud,basename='ProductCrud')
+DRO.register('ProdeuctByMv',ProdeuctByMv,basename='ProdeuctByMv')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

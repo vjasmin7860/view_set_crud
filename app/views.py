@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from rest_framework.viewsets import ViewSet
+from rest_framework.viewsets import ViewSet,ModelViewSet
 from rest_framework.response import Response
 from app.models import *
 from app.serializers import *
@@ -61,6 +61,15 @@ class ProductCrud(ViewSet):
     def delete(self,request,pk):# it is used for delete the given instance  
         instance=Product.objects.get(pk=pk).delete()
         return Response({'delete':'deleted is successfully'})
+
+
+
+
+
+
+class ProdeuctByMv(ModelViewSet):
+    serializer_class=ProductMs
+    queryset=Product.objects.all()
 
 
     
